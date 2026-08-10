@@ -2,33 +2,22 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta tag wajib agar skala layar HP pas dan tidak mengecil sendiri -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sistem Digital - Warung Uwa RJ</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #FF7043; 
-            --primary-hover: #F4511E;
-            --secondary: #26A69A; 
-            --bg-color: #F4F7F6;
-            --surface: #FFFFFF;
-            --text-dark: #2C3E50;
-            --text-light: #7F8C8D;
-            --radius: 16px;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --primary: #FF7043; --primary-hover: #F4511E; --secondary: #26A69A; 
+            --bg-color: #F4F7F6; --surface: #FFFFFF; --text-dark: #2C3E50; --text-light: #7F8C8D;
+            --radius: 16px; --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; -webkit-tap-highlight-color: transparent; }
-
         body { background: var(--bg-color); color: var(--text-dark); padding-bottom: 80px; }
 
         /* Header App */
-        .app-header {
-            background: var(--surface); padding: 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100;
-        }
+        .app-header { background: var(--surface); padding: 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .app-header h1 { color: var(--primary); font-size: 1.4em; display: flex; align-items: center; gap: 8px; }
 
         /* Navigasi */
@@ -36,24 +25,19 @@
         .nav-btn { padding: 8px 12px; font-size: 0.85em; border: none; border-radius: 7px; cursor: pointer; background: transparent; color: var(--text-light); font-weight: 700; transition: all 0.3s ease; }
         .nav-btn.active { background: var(--surface); color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
-        /* Container Responsif */
+        /* Container */
         .container { display: flex; gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 15px; align-items: flex-start; }
 
-        /* Grid Katalog (Default Laptop: Kolom Fleksibel) */
+        /* Katalog */
         .katalog { flex: 2; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; width: 100%; }
-        
-        .card { 
-            background: var(--surface); padding: 15px; border-radius: var(--radius); box-shadow: var(--shadow); 
-            cursor: pointer; transition: all 0.3s ease; position: relative; display: flex; flex-direction: column; 
-            align-items: center; text-align: center; border: 2px solid transparent;
-        }
+        .card { background: var(--surface); padding: 15px; border-radius: var(--radius); box-shadow: var(--shadow); cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid transparent; }
         .card:hover { transform: translateY(-4px); border-color: rgba(255, 112, 67, 0.3); }
         .card-icon { font-size: 2.5em; margin-bottom: 10px; background: #FFF3E0; width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .card h3 { font-size: 1em; margin-bottom: 4px; color: var(--text-dark); }
         .card p { color: var(--primary); font-weight: 800; font-size: 1.1em; margin-bottom: 8px;}
         .badge { background: #E0F2F1; color: var(--secondary); font-size: 0.7em; padding: 3px 8px; border-radius: 20px; font-weight: 700; }
 
-        /* Panel Samping (Keranjang Desktop) */
+        /* Panel Samping */
         .box-panel { flex: 1; min-width: 320px; background: var(--surface); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 80px; }
         .box-panel h2 { border-bottom: 2px dashed #eee; padding-bottom: 12px; margin-bottom: 15px; font-size: 1.2em; display: flex; align-items: center; gap: 8px; }
         
@@ -62,9 +46,7 @@
         .input-group label { display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-dark); font-size: 0.9em; }
         .input-wrapper { position: relative; }
         .input-wrapper i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-light); }
-        .input-group input, .input-group select { 
-            width: 100%; padding: 10px 12px 10px 36px; border: 2px solid #EDF2F7; border-radius: 8px; font-size: 0.95em; font-weight: 600; color: var(--text-dark); outline: none; transition: 0.3s;
-        }
+        .input-group input, .input-group select { width: 100%; padding: 10px 12px 10px 36px; border: 2px solid #EDF2F7; border-radius: 8px; font-size: 0.95em; font-weight: 600; color: var(--text-dark); outline: none; transition: 0.3s; }
         .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.1); }
 
         /* Keranjang List */
@@ -85,40 +67,25 @@
         .btn:hover { background: var(--primary-hover); }
         .btn-success { background: var(--secondary); }
 
-        /* Tombol Keranjang Mengambang Khusus HP (Floating Action Button) */
+        /* FAB Keranjang HP */
         #cart-fab {
             display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white;
             width: 55px; height: 55px; border-radius: 50%; box-shadow: 0 4px 15px rgba(255,112,67,0.4);
             align-items: center; justify-content: center; font-size: 1.3em; z-index: 1000; cursor: pointer;
         }
-        #cart-fab .badge-count {
-            position: absolute; top: -5px; right: -5px; background: #E74C3C; color: white; 
-            font-size: 0.7em; width: 22px; height: 22px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; font-weight: 800; border: 2px solid white;
-        }
+        #cart-fab .badge-count { position: absolute; top: -5px; right: -5px; background: #E74C3C; color: white; font-size: 0.7em; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; border: 2px solid white; }
 
-        /* --- KODE KHUSUS MEDIA QUERY UNTUK LAYAR HP (Lebar < 768px) --- */
         @media (max-width: 768px) {
             .container { flex-direction: column; padding: 10px; margin: 10px auto; }
-            .katalog { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* 2 Kolom pas di HP */
+            .katalog { grid-template-columns: repeat(2, 1fr); gap: 10px; } 
             .card { padding: 10px; }
             .card-icon { width: 50px; height: 50px; font-size: 1.8em; margin-bottom: 5px; }
             .card h3 { font-size: 0.85em; }
             .card p { font-size: 0.95em; }
             
-            /* Ubah Panel Keranjang Jadi Pop-up / Drawer di HP */
-            .box-panel {
-                position: fixed; bottom: 0; left: 0; width: 100%; max-height: 85vh; 
-                border-radius: 20px 20px 0 0; box-shadow: 0 -5px 25px rgba(0,0,0,0.15);
-                transform: translateY(110%); transition: transform 0.3s ease-in-out;
-                z-index: 2000; overflow-y: auto; top: auto;
-            }
+            .box-panel { position: fixed; bottom: 0; left: 0; width: 100%; max-height: 85vh; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 25px rgba(0,0,0,0.15); transform: translateY(110%); transition: transform 0.3s ease-in-out; z-index: 2000; overflow-y: auto; top: auto; }
             .box-panel.open-mobile { transform: translateY(0); }
-            
-            /* Tampilkan Tombol Melayang Keranjang di HP */
             #cart-fab { display: flex; }
-            
-            /* Tombol Tutup Drawer untuk HP */
             .close-drawer { display: block !important; }
         }
 
@@ -131,6 +98,10 @@
         .toast.error i { color: #E74C3C; }
         .spinner { border: 3px solid rgba(0,0,0,0.1); width: 35px; height: 35px; border-radius: 50%; border-left-color: var(--primary); animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Modal PIN */
+        #pin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: white; padding: 30px; border-radius: 16px; width: 100%; max-width: 350px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
@@ -139,18 +110,37 @@
         <h1><i class="fa-solid fa-store"></i> Warung Uwa RJ</h1>
         <div class="nav-menu">
             <button class="nav-btn active" id="btn-kasir" onclick="switchMode('kasir')"><i class="fa-solid fa-calculator"></i> Kasir</button>
-            <button class="nav-btn" id="btn-admin" onclick="switchMode('admin')"><i class="fa-solid fa-box-open"></i> Input</button>
+            <button class="nav-btn" id="btn-admin" onclick="switchMode('admin')"><i class="fa-solid fa-lock"></i> Admin</button>
         </div>
     </header>
 
     <div id="toast-container"></div>
     
-    <!-- Tombol Melayang Keranjang khusus Tampilan HP -->
     <div id="cart-fab" onclick="toggleMobileCart()">
         <i class="fa-solid fa-cart-shopping"></i>
         <div class="badge-count" id="fab-count">0</div>
     </div>
     
+    <!-- MODAL PIN ADMIN -->
+    <div id="pin-modal">
+        <div class="modal-content">
+            <h2 style="color: var(--primary); margin-bottom: 5px;"><i class="fa-solid fa-shield-halved"></i> Akses Admin</h2>
+            <p style="font-size: 0.9em; color: var(--text-light); margin-bottom: 20px;">Masukkan PIN keamanan untuk menambah barang katalog.</p>
+            
+            <div class="input-group" style="text-align: left;">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" id="input-pin" placeholder="Masukkan PIN (Default: 123456)" onkeypress="handlePinEnter(event)">
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button class="btn" style="background: #eee; color: #7f8c8d; box-shadow: none;" onclick="closePinModal()">Batal</button>
+                <button class="btn" onclick="verifyPin()">Buka</button>
+            </div>
+        </div>
+    </div>
+
     <!-- MODE KASIR -->
     <div class="container" id="view-kasir">
         <div class="katalog" id="katalog">
@@ -159,7 +149,6 @@
             </div>
         </div>
 
-        <!-- Panel Keranjang (Otomatis jadi Drawer geser dari bawah di HP) -->
         <div class="box-panel" id="cart-panel">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <h2><i class="fa-solid fa-receipt"></i> Keranjang</h2>
@@ -229,11 +218,19 @@
             <button class="btn btn-success" id="btn-submit-katalog" onclick="submitKatalog()">
                 <i class="fa-solid fa-cloud-arrow-up"></i> Simpan ke Database
             </button>
+            
+            <button class="btn" onclick="switchMode('kasir')" style="background: #E74C3C; margin-top: 15px;">
+                <i class="fa-solid fa-door-open"></i> Keluar dari Admin
+            </button>
         </div>
     </div>
 
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylpjRA1OTkSKK2HEYYh2JLpj1do3JR5KAfyjlL9rp_V6ctFgFrnXKq9_KgdS1scBfJ/exec';
+        
+        // --- PENGATURAN PIN ADMIN ---
+        const PIN_RAHASIA = '123456'; 
+
         let cart = []; 
 
         function showToast(message, type = 'success') {
@@ -247,21 +244,56 @@
         }
 
         function switchMode(mode) {
-            if(mode === 'kasir') {
+            if(mode === 'admin') {
+                // Tampilkan pop-up minta PIN
+                document.getElementById('pin-modal').style.display = 'flex';
+                document.getElementById('input-pin').focus();
+            } else {
+                // Langsung masuk ke kasir (bebas akses)
+                executeSwitchMode('kasir');
+            }
+        }
+
+        // Fungsi yang dipanggil saat PIN benar
+        function executeSwitchMode(mode) {
+            if(mode === 'admin') {
+                document.getElementById('view-kasir').style.display = 'none';
+                document.getElementById('view-admin').style.display = 'flex';
+                document.getElementById('btn-kasir').classList.remove('active');
+                document.getElementById('btn-admin').classList.add('active');
+            } else {
                 document.getElementById('view-kasir').style.display = 'flex';
                 document.getElementById('view-admin').style.display = 'none';
                 document.getElementById('btn-kasir').classList.add('active');
                 document.getElementById('btn-admin').classList.remove('active');
                 loadData(); 
-            } else {
-                document.getElementById('view-kasir').style.display = 'none';
-                document.getElementById('view-admin').style.display = 'flex';
-                document.getElementById('btn-kasir').classList.remove('active');
-                document.getElementById('btn-admin').classList.add('active');
             }
         }
 
-        // Fungsi Buka/Tutup Keranjang khusus layar HP (Drawer)
+        function verifyPin() {
+            const pinDimasukkan = document.getElementById('input-pin').value;
+            if(pinDimasukkan === PIN_RAHASIA) {
+                closePinModal();
+                executeSwitchMode('admin');
+                showToast('Akses Admin Terbuka', 'success');
+            } else {
+                showToast('PIN Salah!', 'error');
+                document.getElementById('input-pin').value = ''; // Kosongkan input
+                document.getElementById('input-pin').focus();
+            }
+        }
+
+        function closePinModal() {
+            document.getElementById('pin-modal').style.display = 'none';
+            document.getElementById('input-pin').value = '';
+        }
+
+        function handlePinEnter(e) {
+            if(e.key === 'Enter') {
+                verifyPin();
+            }
+        }
+
         function toggleMobileCart() {
             document.getElementById('cart-panel').classList.toggle('open-mobile');
         }
@@ -329,7 +361,6 @@
             const cartForm = document.getElementById('cart-form');
             const fabCount = document.getElementById('fab-count');
             
-            // Hitung total item untuk badge di tombol HP
             const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
             fabCount.innerText = totalQty;
 
@@ -387,7 +418,6 @@
                 btn.innerHTML = '<i class="fa-solid fa-print"></i> Proses Bayar'; 
                 btn.disabled = false;
                 clearCart();
-                // Tutup drawer jika di HP
                 document.getElementById('cart-panel').classList.remove('open-mobile');
             })
             .catch(err => {
