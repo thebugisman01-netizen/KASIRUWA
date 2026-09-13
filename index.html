@@ -16,19 +16,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', sans-serif; -webkit-tap-highlight-color: transparent; }
         body { background: var(--bg-color); color: var(--text-dark); padding-bottom: 80px; }
 
-        /* Header App */
         .app-header { background: var(--surface); padding: 15px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .app-header h1 { color: var(--primary); font-size: 1.4em; display: flex; align-items: center; gap: 8px; }
 
-        /* Navigasi */
         .nav-menu { display: flex; gap: 5px; background: #EDF2F7; padding: 4px; border-radius: 10px; }
         .nav-btn { padding: 8px 12px; font-size: 0.85em; border: none; border-radius: 7px; cursor: pointer; background: transparent; color: var(--text-light); font-weight: 700; transition: all 0.3s ease; }
         .nav-btn.active { background: var(--surface); color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
-        /* Container */
         .container { display: flex; gap: 20px; max-width: 1200px; margin: 20px auto; padding: 0 15px; align-items: flex-start; }
 
-        /* Katalog */
         .katalog { flex: 2; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; width: 100%; }
         .card { background: var(--surface); padding: 15px; border-radius: var(--radius); box-shadow: var(--shadow); cursor: pointer; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; border: 2px solid transparent; }
         .card:hover { transform: translateY(-4px); border-color: rgba(255, 112, 67, 0.3); }
@@ -37,20 +33,17 @@
         .card p { color: var(--primary); font-weight: 800; font-size: 1.1em; margin-bottom: 8px;}
         .badge { background: #E0F2F1; color: var(--secondary); font-size: 0.7em; padding: 3px 8px; border-radius: 20px; font-weight: 700; }
 
-        /* Panel Samping & Admin Layout */
         .box-panel { flex: 1; min-width: 320px; background: var(--surface); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); position: sticky; top: 80px; }
         .box-panel h2 { border-bottom: 2px dashed #eee; padding-bottom: 12px; margin-bottom: 15px; font-size: 1.2em; display: flex; align-items: center; gap: 8px; }
         
         .admin-layout { display: flex; flex-direction: column; gap: 20px; width: 100%; }
         .admin-row { display: flex; gap: 20px; width: 100%; flex-wrap: wrap; }
         
-        /* Stats Cards */
         .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 10px; width: 100%; }
         .stat-card { background: var(--surface); padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow); border-left: 5px solid var(--primary); }
         .stat-card h4 { font-size: 0.85em; color: var(--text-light); text-transform: uppercase; margin-bottom: 5px; }
         .stat-card h2 { font-size: 1.5em; color: var(--text-dark); border: none; padding: 0; margin: 0; }
         
-        /* Form & Input */
         .input-group { margin-bottom: 15px; }
         .input-group label { display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-dark); font-size: 0.9em; }
         .input-wrapper { position: relative; }
@@ -58,7 +51,6 @@
         .input-group input, .input-group select { width: 100%; padding: 10px 12px 10px 36px; border: 2px solid #EDF2F7; border-radius: 8px; font-size: 0.95em; font-weight: 600; color: var(--text-dark); outline: none; transition: 0.3s; }
         .input-group input:focus, .input-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 112, 67, 0.1); }
 
-        /* Tabel Admin */
         .admin-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em; }
         .admin-table th, .admin-table td { padding: 10px; text-align: left; border-bottom: 1px solid #EDF2F7; }
         .admin-table th { background: #F8FAFC; color: var(--text-light); font-weight: 700; }
@@ -69,7 +61,6 @@
         .btn-edit { background: #3498DB; }
         .btn-delete { background: #E74C3C; }
 
-        /* Keranjang List */
         .cart-list { max-height: 280px; overflow-y: auto; padding-right: 5px; margin-bottom: 15px; }
         .cart-item { background: #FFF9F7; border: 1px solid #FFE0B2; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
         .cart-item-info h4 { color: var(--primary); font-size: 0.95em; margin-bottom: 2px; }
@@ -87,7 +78,6 @@
         .btn:hover { background: var(--primary-hover); }
         .btn-success { background: var(--secondary); }
 
-        /* FAB Keranjang HP */
         #cart-fab {
             display: none; position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: white;
             width: 55px; height: 55px; border-radius: 50%; box-shadow: 0 4px 15px rgba(255,112,67,0.4);
@@ -95,23 +85,43 @@
         }
         #cart-fab .badge-count { position: absolute; top: -5px; right: -5px; background: #E74C3C; color: white; font-size: 0.7em; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; border: 2px solid white; }
 
+        /* PERBAIKAN RESPONSIVE LAYOUT MOBILE (HP) */
         @media (max-width: 768px) {
-            .container { flex-direction: column; padding: 10px; margin: 10px auto; }
+            .container { flex-direction: column; padding: 10px; margin: 10px auto; width: 100%; }
             .katalog { grid-template-columns: repeat(2, 1fr); gap: 10px; } 
             .card { padding: 10px; }
             .card-icon { width: 50px; height: 50px; font-size: 1.8em; margin-bottom: 5px; }
             .card h3 { font-size: 0.85em; }
             .card p { font-size: 0.95em; }
             
-            .box-panel { position: fixed; bottom: 0; left: 0; width: 100%; max-height: 85vh; border-radius: 20px 20px 0 0; box-shadow: 0 -5px 25px rgba(0,0,0,0.15); transform: translateY(110%); transition: transform 0.3s ease-in-out; z-index: 2000; overflow-y: auto; top: auto; }
-            .box-panel.open-mobile { transform: translateY(0); }
+            /* Panel keranjang kasir mode drawer HP */
+            #cart-panel { 
+                position: fixed; bottom: 0; left: 0; width: 100%; max-height: 85vh; 
+                border-radius: 20px 20px 0 0; box-shadow: 0 -5px 25px rgba(0,0,0,0.15); 
+                transform: translateY(110%); transition: transform 0.3s ease-in-out; 
+                z-index: 2000; overflow-y: auto; top: auto; min-width: unset;
+            }
+            #cart-panel.open-mobile { transform: translateY(0); }
+            
+            /* Panel form & etalase admin di HP tetap statis dan scrollable normal */
+            #view-admin .box-panel {
+                position: static !important;
+                transform: none !important;
+                min-width: 100% !important;
+                max-height: none !important;
+                box-shadow: var(--shadow) !important;
+                border-radius: var(--radius) !important;
+                z-index: 1 !important;
+            }
+
+            .admin-row { flex-direction: column; gap: 15px; }
+
             #cart-fab { display: flex; }
             .close-drawer { display: block !important; }
         }
 
         .close-drawer { display: none; background: none; border: none; font-size: 1.2em; color: var(--text-dark); cursor: pointer; }
 
-        /* Toast & Spinner */
         #toast-container { position: fixed; bottom: 30px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; }
         .toast { background: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 0.9em; }
         .toast.success i { color: var(--secondary); }
@@ -119,7 +129,6 @@
         .spinner { border: 3px solid rgba(0,0,0,0.1); width: 35px; height: 35px; border-radius: 50%; border-left-color: var(--primary); animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        /* Modal PIN */
         #pin-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center; padding: 20px; }
         .modal-content { background: white; padding: 30px; border-radius: 16px; width: 100%; max-width: 350px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
     </style>
@@ -220,11 +229,16 @@
 
             <!-- Dashboard Laporan Transaksi -->
             <div class="box-panel" style="position: static; width: 100%;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #eee; padding-bottom: 12px; margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px dashed #eee; padding-bottom: 12px; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
                     <h2 style="border: none; margin: 0; padding: 0;"><i class="fa-solid fa-file-invoice-dollar"></i> Laporan Transaksi</h2>
-                    <button class="btn btn-success" onclick="downloadCSV()" style="width: auto; padding: 8px 15px; font-size: 0.85em;">
-                        <i class="fa-solid fa-file-csv"></i> Download CSV
-                    </button>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-success" onclick="downloadCSV()" style="width: auto; padding: 8px 15px; font-size: 0.85em;">
+                            <i class="fa-solid fa-file-csv"></i> Download CSV
+                        </button>
+                        <button class="btn" onclick="resetTransaksi()" style="width: auto; padding: 8px 15px; font-size: 0.85em; background: #E74C3C;">
+                            <i class="fa-solid fa-rotate-right"></i> Reset Data
+                        </button>
+                    </div>
                 </div>
                 <div class="table-scroll">
                     <table class="admin-table">
@@ -328,6 +342,14 @@
         let rawKatalogData = [];
         let rawTransaksiData = [];
 
+        function sendApiRequest(payload) {
+            return fetch(SCRIPT_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                body: JSON.stringify(payload)
+            });
+        }
+
         function showToast(message, type = 'success') {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
@@ -359,7 +381,7 @@
                 document.getElementById('view-admin').style.display = 'none';
                 document.getElementById('btn-kasir').classList.add('active');
                 document.getElementById('btn-admin').classList.remove('active');
-                loadData(); 
+                renderKatalog(); 
             }
         }
 
@@ -402,7 +424,6 @@
         }
 
         function loadData() {
-            const katalogDiv = document.getElementById('katalog');
             fetch(SCRIPT_URL)
                 .then(res => res.json())
                 .then(response => {
@@ -412,7 +433,7 @@
                     renderAdminDashboard();
                 })
                 .catch(err => {
-                    katalogDiv.innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:#e74c3c;">Gagal memuat data.</p>';
+                    document.getElementById('katalog').innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:#e74c3c;">Gagal memuat data.</p>';
                 });
         }
 
@@ -521,6 +542,30 @@
             document.body.removeChild(link);
         }
 
+        function resetTransaksi() {
+            if (rawTransaksiData.length === 0) {
+                showToast('Data transaksi sudah kosong!', 'error');
+                return;
+            }
+
+            if (!confirm('Apakah Anda yakin ingin MENGHAPUS SEMUA riwayat transaksi dari Database?')) {
+                return;
+            }
+
+            rawTransaksiData = [];
+            renderAdminDashboard();
+            showToast('Mereset transaksi dari database...', 'success');
+
+            sendApiRequest({ action: 'reset_transaksi' })
+            .then(() => {
+                showToast('Data transaksi bersih total di database!', 'success');
+                loadData();
+            })
+            .catch(() => {
+                setTimeout(() => { loadData(); }, 1500);
+            });
+        }
+
         function editProduct(rowId) {
             const item = rawKatalogData.find(prod => prod.row_id === rowId);
             if(!item) return;
@@ -533,6 +578,9 @@
 
             document.getElementById('form-title').innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Edit Barang';
             document.getElementById('btn-cancel-edit').style.display = 'block';
+
+            // Automatic scroll halus ke posisi form saat tombol edit diklik di HP
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function resetForm() {
@@ -547,52 +595,54 @@
         }
 
         function deleteProduct(rowId, nama) {
-            if(!confirm(`Apakah Anda yakin ingin menghapus "${nama}"?`)) return;
+            if(!confirm(`Apakah Anda yakin ingin menghapus "${nama}" dari database?`)) return;
 
-            const payload = { action: 'hapus_katalog', row_id: rowId };
+            rawKatalogData = rawKatalogData.filter(item => item.row_id !== rowId);
+            renderKatalog();
+            renderAdminDashboard();
+            showToast('Menghapus dari database...', 'success');
 
-            fetch(SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
-            .then(res => res.json())
-            .then(() => {
-                showToast('Barang berhasil dihapus!', 'success');
-                loadData();
-            })
-            .catch(() => showToast('Gagal menghapus barang.', 'error'));
+            sendApiRequest({ action: 'hapus_katalog', row_id: rowId })
+            .then(() => loadData());
         }
 
         function submitKatalog() {
             const editRowId = document.getElementById('edit-row-id').value;
-            const actionType = editRowId ? 'edit_katalog' : 'tambah_katalog';
+            const nama = document.getElementById('new-nama').value;
+            const kategori = document.getElementById('new-kategori').value;
+            const harga = parseInt(document.getElementById('new-harga').value);
+            const stok = parseInt(document.getElementById('new-stok').value);
 
-            const payload = {
-                action: actionType,
-                row_id: editRowId,
-                nama_barang: document.getElementById('new-nama').value,
-                kategori: document.getElementById('new-kategori').value,
-                harga_satuan: parseInt(document.getElementById('new-harga').value),
-                stok: parseInt(document.getElementById('new-stok').value)
-            };
-
-            if(!payload.nama_barang || isNaN(payload.harga_satuan)) { 
+            if(!nama || isNaN(harga)) { 
                 showToast('Nama & Harga wajib diisi!', 'error'); 
                 return; 
             }
 
-            const btn = document.getElementById('btn-submit-katalog');
-            btn.innerHTML = 'Menyimpan...'; btn.disabled = true;
+            const actionType = editRowId ? 'edit_katalog' : 'tambah_katalog';
 
-            fetch(SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
-            .then(res => res.json())
-            .then(() => {
-                showToast(editRowId ? 'Barang berhasil diperbarui!' : 'Barang berhasil ditambahkan!', 'success');
-                btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Simpan Produk'; btn.disabled = false;
-                resetForm();
-                loadData();
-            })
-            .catch(() => {
-                showToast('Gagal menyimpan data.', 'error');
-                btn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Simpan Produk'; btn.disabled = false;
-            });
+            if (editRowId) {
+                const index = rawKatalogData.findIndex(item => item.row_id == editRowId);
+                if (index !== -1) {
+                    rawKatalogData[index] = { row_id: parseInt(editRowId), Nama_Barang: nama, Kategori: kategori, Harga_Satuan: harga, Stok: stok };
+                }
+            } else {
+                const newRowId = rawKatalogData.length > 0 ? Math.max(...rawKatalogData.map(o => o.row_id)) + 1 : 2;
+                rawKatalogData.push({ row_id: newRowId, Nama_Barang: nama, Kategori: kategori, Harga_Satuan: harga, Stok: stok });
+            }
+
+            renderKatalog();
+            renderAdminDashboard();
+            resetForm();
+            showToast('Menyimpan ke database...', 'success');
+
+            sendApiRequest({
+                action: actionType,
+                row_id: editRowId,
+                nama_barang: nama,
+                kategori: kategori,
+                harga_satuan: harga,
+                stok: stok
+            }).then(() => loadData());
         }
 
         function addToCart(name, price) {
@@ -660,6 +710,9 @@
         }
 
         function submitTransaction() {
+            if (cart.length === 0) return;
+
+            const nowStr = new Date().toLocaleString('id-ID');
             const itemsToSubmit = cart.map(item => ({
                 nama_barang: item.name,
                 harga_satuan: item.price,
@@ -667,26 +720,22 @@
                 total_harga: item.price * item.qty
             }));
 
-            const payload = { action: 'transaksi_multi', items: itemsToSubmit };
-            const btn = document.getElementById('btn-submit-trx');
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Memproses...'; 
-            btn.disabled = true;
-
-            fetch(SCRIPT_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
-            .then(res => res.json())
-            .then(() => {
-                showToast('Transaksi berhasil!', 'success');
-                btn.innerHTML = '<i class="fa-solid fa-print"></i> Proses Bayar'; 
-                btn.disabled = false;
-                clearCart();
-                document.getElementById('cart-panel').classList.remove('open-mobile');
-                loadData();
-            })
-            .catch(err => {
-                showToast('Gagal memproses.', 'error');
-                btn.innerHTML = '<i class="fa-solid fa-print"></i> Proses Bayar'; 
-                btn.disabled = false;
+            itemsToSubmit.forEach(item => {
+                rawTransaksiData.push({
+                    tanggal: nowStr,
+                    nama_barang: item.nama_barang,
+                    harga_satuan: item.harga_satuan,
+                    jumlah_beli: item.jumlah_beli,
+                    total_harga: item.total_harga
+                });
             });
+
+            showToast('Transaksi berhasil!', 'success');
+            clearCart();
+            document.getElementById('cart-panel').classList.remove('open-mobile');
+            renderAdminDashboard();
+
+            sendApiRequest({ action: 'transaksi_multi', items: itemsToSubmit }).then(() => loadData());
         }
     </script>
 </body>
